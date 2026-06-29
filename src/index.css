@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap');
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #0b0a0e;
+  color: #eeeef0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-strong {
+  background: rgba(20, 18, 26, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.audio-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  outline: none;
+  transition: background 0.2s;
+}
+
+.audio-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+.audio-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.rec-pulse {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+
+.waveform-canvas {
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.track-row:hover .track-controls {
+  opacity: 1;
+}
+
+.track-controls {
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.step-cell {
+  transition: all 0.08s ease;
+}
+
+.step-cell-on {
+  box-shadow: 0 0 16px -4px var(--accent-glow, #fff3);
+}
+
+select option {
+  background: #1a1822;
+  color: #eeeef0;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 0 12px;
+  height: 36px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.15s;
+  gap: 6px;
+}
+
+.btn-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-icon:active {
+  transform: scale(0.96);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #d97a3a, #c55a8a);
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 30px rgba(217, 122, 58, 0.25);
+}
+
+.btn-danger {
+  background: rgba(220, 60, 70, 0.7);
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: rgba(220, 60, 70, 0.9);
+}
+
+.btn-success {
+  background: rgba(40, 200, 120, 0.6);
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn-success:hover {
+  background: rgba(40, 200, 120, 0.8);
+}
+
+.rec-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e34;
+  display: inline-block;
+}
+
+.rec-dot.active {
+  animation: pulse 0.8s ease-in-out infinite;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bg-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
